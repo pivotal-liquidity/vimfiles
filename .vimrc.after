@@ -1,0 +1,64 @@
+" allow Vim to manage multiple buffers effectively
+set hidden
+
+" ignore these files
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" font size
+set guifont=Monaco:h12
+
+" add git branch to status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" remove swap and backup files from working directory
+set nobackup
+set nowritebackup
+
+" clear white space in the end of lines
+autocmd BufWritePre * :%s/\s\+$//e
+
+" autosave when focus is lost
+:au FocusLost * :wa
+
+"------------------------------------------------------------------------
+"---------------- Custom Mapping ----------------------------------------
+"------------------------------------------------------------------------
+
+" map for resizing windows
+" http://vim.wikia.com/wiki/Fast_window_resizing_with_plus/minus_keys
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+  map ( <C-W><
+  map ) <C-W>>
+end
+
+" jump between windows
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+
+" ZoomWin configuration
+map <C-z> <C-w>o
+
+" map F2 to NERDTree
+map <F2> :NERDTreeToggle<CR>
+
+" run test for the whole file
+map <D-r> :w<CR>\|:exe "!spin push %" <CR><CR>
+" run test for specific line with spin push
+map <D-R> :w<CR>\|:exe "!spin push %:" . line(".") <CR><CR>
+
+" run all tests
+:command! S !spin push spec
+
+" search for the word where the cursor is
+map <D-A> :Ack! <C-R><C-W><CR>
+
+" format the entire file
+map <D-L> gg=G<CR>''
+
+" open BufferGator bar with open files
+map <D-e> :BuffergatorToggle <CR>
+
