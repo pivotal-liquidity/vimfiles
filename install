@@ -1,0 +1,4 @@
+ln -s `pwd`/.gvimrc.after ~/.gvimrc.after
+ln -s `pwd`/.gvimrc.before ~/.gvimrc.before
+ln -s `pwd`/.vimrc.after ~/.vimrc.after
+
