@@ -1,5 +1,7 @@
 " allow Vim to manage multiple buffers effectively
 set hidden
+" Auto load the file changed by other programs
+set autoread
 
 " ignore these files
 set wildignore=*.swp,*.bak,*.pyc,*.class
