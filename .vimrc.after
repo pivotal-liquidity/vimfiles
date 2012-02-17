@@ -77,6 +77,10 @@ function! RenameFile()
         redraw!
     endif
 endfunction
+command! ChangeHashSyntax call ChangeHashSyntax()
+function! ChangeHashSyntax()
+	exec ':%s/:\([^ )]\+\) =>/\1:/gc'
+endfunction
 
 command! -nargs=+ QFDo call QFDo(<q-args>)
 

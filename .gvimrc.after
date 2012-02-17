@@ -1,2 +1,6 @@
 colorscheme railscasts
 set guifont=Monaco:h15
+if has("gui_running")
+  set guioptions-=T
+endif
+set vb
