@@ -3,6 +3,8 @@ set hidden
 " Auto load the file changed by other programs
 set autoread
 
+set autoread
+
 " ignore these files
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
