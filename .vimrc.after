@@ -3,8 +3,6 @@ set hidden
 " Auto load the file changed by other programs
 set autoread
 
-set autoread
-
 " ignore these files
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
@@ -79,6 +77,7 @@ function! RenameFile()
         redraw!
     endif
 endfunction
+" Change hash syntax from => to :
 command! ChangeHashSyntax call ChangeHashSyntax()
 function! ChangeHashSyntax()
 	exec ':%s/:\([^ )]\+\) =>/\1:/gc'
